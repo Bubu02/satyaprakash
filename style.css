@@ -451,8 +451,8 @@ section {
     bottom: 0;
     width: 4px;
     background: #e6e6e6;
-    left: 20px;
-    margin-left: -2px;
+    left: 17px;
+    margin-left: 0;
 }
 
 .timeline-entry {
@@ -481,7 +481,7 @@ section {
     color: #fff;
     z-index: 100;
     position: relative;
-    left: -1px;
+    left: -11px;
 }
 
 .timeline-icon.bg-color-1 {
@@ -508,9 +508,10 @@ section {
     position: relative;
     background: #fff;
     padding: 1.5em;
-    margin-left: 60px;
+    margin-left: 50px;
     background-clip: padding-box;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 0;
 }
 
 .timeline-label:after {
@@ -682,9 +683,10 @@ section {
 .skills-table-wrap {
     overflow-x: auto;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 30px;
+    border-radius: 8px;
 }
 
 .skills-table {
