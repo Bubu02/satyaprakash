@@ -508,6 +508,7 @@ section {
     position: relative;
     background: #fff;
     padding: 0.5em;
+    margin-bottom: 23px;
     margin-left: 50px;
     background-clip: padding-box;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
@@ -916,5 +917,31 @@ body {
 }
 
 #projects .timeline {
-    margin-top: 20px;
+    margin-top: 0;
+}
+
+/* Hide the vertical connecting line in projects section */
+#projects .timeline:before {
+    display: none;
+}
+
+/* Hide the vertical connecting line in projects section */
+#education .timeline:before {
+    display: none;
+}
+
+/* Hide the vertical connecting line in projects section */
+#research .timeline:before {
+    display: none;
+}
+
+/* Remove extra blank space after education section */
+#education {
+    min-height: auto;
+    padding-bottom: 2rem !important;
+}
+
+/* Remove extra blank space after education section */
+#research {
+    min-height: auto;
 }
