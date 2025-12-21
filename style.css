@@ -762,7 +762,8 @@ section {
 
 /* Adjust timeline for projects if needed */
 .projects-timeline .timeline-label {
-    padding: 2em;
+    padding: 0.5em;
+    margin-top: -25px;
 }
 
 .projects-timeline .timeline-label h2 {
