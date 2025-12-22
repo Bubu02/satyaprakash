@@ -610,7 +610,7 @@ section {
     margin-bottom: 30px;
     padding: 25px;
     background: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
     position: relative;
     border-bottom: 2px solid transparent;
@@ -618,6 +618,7 @@ section {
     /* Space for hexagon */
     margin-top: 50px;
     /* Space for hexagon overlap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .overall-skill-box .icon {
@@ -633,6 +634,7 @@ section {
     align-items: center;
     /* Hexagon clip-path */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
 }
 
 .overall-skill-box .icon i {
@@ -653,6 +655,12 @@ section {
     font-size: 14px;
     color: #777;
     margin-bottom: 0;
+}
+
+/* Hover effect for skill boxes */
+.overall-skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Color Variations */
@@ -925,16 +933,6 @@ body {
     display: none;
 }
 
-/* Hide the vertical connecting line in projects section */
-#education .timeline:before {
-    display: none;
-}
-
-/* Hide the vertical connecting line in projects section */
-#research .timeline:before {
-    display: none;
-}
-
 /* Remove extra blank space after education section */
 #education {
     min-height: auto;
@@ -944,4 +942,19 @@ body {
 /* Remove extra blank space after education section */
 #research {
     min-height: auto;
+}
+
+/* Add small circles at the end of timeline for Experience, Research and Education sections */
+#experience .timeline:after,
+#research .timeline:after,
+#education .timeline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 17px;
+    width: 20px;
+    height: 20px;
+    background: #e6e6e6;
+    border-radius: 50%;
+    margin-left: -8px;
 }
