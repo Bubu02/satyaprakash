@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Set current year in footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
     const sidebar = document.getElementById('sidebar');
     const navToggle = document.querySelector('.js-colorlib-nav-toggle');
     const sections = document.querySelectorAll('section');

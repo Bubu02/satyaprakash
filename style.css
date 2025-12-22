@@ -483,6 +483,7 @@ section {
 /* Timeline (Experience & Education) */
 .timeline {
     position: relative;
+    margin-top: 30px;
 }
 
 .timeline:before {
@@ -1048,4 +1049,145 @@ body {
 
 .overall-skill-box:nth-child(3) {
     transition-delay: 0.3s;
+}
+
+/* Footer Section */
+.footer-section {
+    background: #f8f8f8;
+    padding: 60px 2rem 40px 2rem;
+    margin-top: 80px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.footer-copyright p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.back-to-top-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #fff;
+    background: #333;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.back-to-top-btn i {
+    font-size: 16px;
+}
+
+.footer-cta {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-subtitle {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-large-text {
+    font-size: 120px;
+    font-weight: 700;
+    color: #e8e8e8;
+    letter-spacing: 10px;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.footer-social-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #333;
+    border-radius: 50px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.footer-social-btn:hover {
+    background: #333;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-credits {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.footer-credits p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.footer-credits strong {
+    color: #333;
+}
+
+/* Mobile Footer Adjustments */
+@media screen and (max-width: 768px) {
+    .footer-section {
+        padding: 40px 1.5rem 30px 1.5rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .footer-large-text {
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
+
+    .footer-social {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-social-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-credits {
+        text-align: center;
+    }
 }
