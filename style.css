@@ -397,6 +397,47 @@ section {
         position: fixed;
         height: 100%;
     }
+
+    /* Mobile spacing fixes */
+    section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .heading-meta {
+        margin-bottom: 20px !important;
+    }
+
+    .heading {
+        margin-bottom: 2.5em !important;
+    }
+
+    /* Timeline adjustments for mobile */
+    .timeline-entry {
+        margin-left: 20px;
+    }
+
+    .timeline-label {
+        margin-left: 40px;
+        padding: 1em;
+    }
+
+    /* Skill boxes on mobile */
+    .overall-skill-box {
+        margin-bottom: 60px;
+        max-width: 100% !important;
+    }
+
+    /* Hero text adjustments */
+    .slider-text-inner h1 {
+        font-size: 40px;
+    }
+
+    .slider-text-inner h2 {
+        font-size: 20px;
+    }
 }
 
 /* CSS for newly added sections */
@@ -957,4 +998,54 @@ body {
     background: #e6e6e6;
     border-radius: 50%;
     margin-left: -8px;
+}
+
+/* Scroll Animation Styles */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger animation delays for timeline entries */
+.timeline-entry:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.timeline-entry:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.timeline-entry:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.timeline-entry:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.timeline-entry:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.timeline-entry:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* Stagger animation delays for skill boxes */
+.overall-skill-box:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.overall-skill-box:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.overall-skill-box:nth-child(3) {
+    transition-delay: 0.3s;
 }

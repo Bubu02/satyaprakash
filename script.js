@@ -75,4 +75,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Scroll Animation with Intersection Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optionally unobserve after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Add fade-in-left class and observe elements
+    const animatedElements = document.querySelectorAll(`
+        .heading-meta,
+        .heading,
+        .timeline-entry,
+        .overall-skill-box,
+        .project-entry,
+        .contact-box,
+        .skills-table-wrap,
+        .about-separator
+    `);
+
+    animatedElements.forEach(el => {
+        el.classList.add('fade-in-left');
+        observer.observe(el);
+    });
 });
