@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #2c98f0;
+    --primary-color: #333333;
     --dark-color: #000;
     --text-color: #4d4d4d;
     /* rgba(0, 0, 0, 0.7) */
-    --bg-color: #eef1f5;
+    --bg-color: ##f7f7f7;
     /* Light grey for the side gaps */
     --sidebar-width: 270px;
     --content-max-width: 1400px;
@@ -129,14 +129,14 @@ nav#navbar ul li {
 }
 
 nav#navbar ul li a {
-    color: #000;
+    color: #999;
     position: relative;
     padding-bottom: 2px;
 }
 
 nav#navbar ul li a:hover,
 nav#navbar ul li.active a {
-    color: var(--primary-color);
+    color: #000;
     text-decoration: none;
     background: transparent;
 }
@@ -235,20 +235,24 @@ section {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-.btn-primary {
-    background: var(--primary-color);
-    color: #fff;
-    border: 1px solid var(--primary-color);
-    padding: 10px 20px;
-    border-radius: 0;
-    letter-spacing: 2px;
+.btn-learn {
+    background: transparent;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    color: #eee;
+    padding: 15px 35px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 12px;
+    transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-    background: transparent;
-    color: var(--primary-color);
+.btn-learn:hover {
+    background: #333;
+    color: #fff;
+    transform: translateY(-3px);
+    text-decoration: none;
 }
 
 /* About Section */
@@ -499,7 +503,7 @@ section {
 
 .timeline-entry {
     position: relative;
-    margin-top: 5px;
+    margin-top: 50px;
     margin-left: 30px;
     margin-bottom: 10px;
     clear: both;
@@ -548,27 +552,17 @@ section {
 
 .timeline-label {
     position: relative;
-    background: #fff;
-    padding: 0.5em;
+    background: transparent;
+    padding: 0;
     margin-bottom: 23px;
     margin-left: 50px;
     background-clip: padding-box;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
     margin-top: -40px;
 }
 
 .timeline-label:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 9px 9px 9px 0;
-    border-color: transparent #fff transparent transparent;
-    left: 0;
-    top: 10px;
-    margin-left: -9px;
+    display: none;
 }
 
 .timeline-label h2 {
@@ -1158,6 +1152,23 @@ body {
 
 .footer-credits strong {
     color: #333;
+}
+
+
+.footer-contact-info {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-contact-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.footer-contact-info i {
+    color: #333;
+    margin-right: 10px;
 }
 
 /* Mobile Footer Adjustments */
