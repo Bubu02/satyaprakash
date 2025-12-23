@@ -964,11 +964,6 @@ body {
     margin-top: 0;
 }
 
-/* Hide the vertical connecting line in projects section */
-#projects .timeline:before {
-    display: none;
-}
-
 /* Remove extra blank space after education section */
 #education {
     min-height: auto;
@@ -983,6 +978,7 @@ body {
 /* Add small circles at the end of timeline for Experience, Research and Education sections */
 #experience .timeline:after,
 #research .timeline:after,
+#projects .timeline:after,
 #education .timeline:after {
     content: '';
     position: absolute;
