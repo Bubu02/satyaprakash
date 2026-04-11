@@ -64,6 +64,11 @@ a:hover {
     color: var(--dark-color);
 }
 
+/* Hide mobile toggle on desktop */
+.colorlib-nav-toggle {
+    display: none;
+}
+
 /* Sidebar */
 #sidebar {
     position: sticky;
@@ -328,64 +333,66 @@ section {
     }
 
     .js-colorlib-nav-toggle {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
         position: fixed;
         top: 20px;
         left: 20px;
         z-index: 9999;
-        /* Toggle styling needed */
-        background: #fff;
-        padding: 5px;
-        border-radius: 4px;
-        color: #000;
-        color: #000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .js-colorlib-nav-toggle i {
-        position: relative;
-        display: inline-block;
-        width: 20px;
-        height: 2px;
-        color: #000;
-        font: bold 14px/.4 Helvetica;
-        text-transform: uppercase;
-        text-indent: -55px;
-        background: #000;
-        transition: all .2s ease-out;
-    }
-
-    .js-colorlib-nav-toggle i::before,
-    .js-colorlib-nav-toggle i::after {
-        content: '';
-        width: 20px;
-        height: 2px;
-        background: #000;
-        position: absolute;
-        left: 0;
-        transition: all .2s ease-out;
-    }
-
-    .js-colorlib-nav-toggle i::before {
-        top: -7px;
-    }
-
-    .js-colorlib-nav-toggle i::after {
-        bottom: -7px;
-    }
-
-    body.mobile-menu-active .js-colorlib-nav-toggle i {
         background: transparent;
+        padding: 10px;
+        border-radius: 8px;
+        width: 44px;
+        height: 44px;
+        transition: all 0.35s ease;
     }
 
-    body.mobile-menu-active .js-colorlib-nav-toggle i::before {
-        top: 0;
-        transform: rotateZ(45deg);
+    .fries-line {
+        display: block;
+        height: 2.5px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    body.mobile-menu-active .js-colorlib-nav-toggle i::after {
-        bottom: 0;
-        transform: rotateZ(-45deg);
+    .fries-line:nth-child(1) {
+        width: 60%;
+    }
+
+    .fries-line:nth-child(2) {
+        width: 100%;
+    }
+
+    .fries-line:nth-child(3) {
+        width: 40%;
+    }
+
+    /* Active / Menu Open state */
+    body.mobile-menu-active .js-colorlib-nav-toggle {
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    body.mobile-menu-active .fries-line {
+        background: #222;
+    }
+
+    body.mobile-menu-active .fries-line:nth-child(1) {
+        width: 100%;
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    body.mobile-menu-active .fries-line:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    body.mobile-menu-active .fries-line:nth-child(3) {
+        width: 100%;
+        transform: translateY(-7.5px) rotate(-45deg);
     }
 
     body.mobile-menu-active #sidebar {
@@ -487,7 +494,7 @@ section {
 /* Timeline (Experience & Education) */
 .timeline {
     position: relative;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .timeline:before {
@@ -503,9 +510,9 @@ section {
 
 .timeline-entry {
     position: relative;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     clear: both;
 }
 
@@ -553,8 +560,8 @@ section {
 .timeline-label {
     position: relative;
     background: transparent;
-    padding: 0;
-    margin-bottom: 23px;
+    padding: 10px 0 20px 0;
+    margin-bottom: 30px;
     margin-left: 50px;
     background-clip: padding-box;
     box-shadow: none;
@@ -569,7 +576,7 @@ section {
     font-size: 20px;
     font-family: var(--font-primary);
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .timeline-label h2 a {
@@ -579,9 +586,23 @@ section {
 
 .timeline-label span {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 14px;
     color: #999;
+}
+
+.timeline-label p {
+    margin-bottom: 12px;
+}
+
+.timeline-label ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.timeline-label ul li {
+    margin-bottom: 10px;
+    line-height: 1.7;
 }
 
 /* Projects */
@@ -1196,5 +1217,174 @@ body {
 
     .footer-credits {
         text-align: center;
+    }
+}
+
+/* ===== Resume Modal ===== */
+.resume-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.resume-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.resume-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.resume-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 850px;
+    height: 90vh;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.92);
+    transition: transform 0.35s ease;
+}
+
+.resume-modal.active .resume-modal-content {
+    transform: scale(1);
+}
+
+.resume-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+    flex-shrink: 0;
+}
+
+.resume-modal-header h3 {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resume-modal-header h3 i {
+    color: #e74c3c;
+    font-size: 20px;
+}
+
+.resume-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resume-download-btn:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.resume-close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background: transparent;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.resume-close-btn:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+.resume-modal-body {
+    flex: 1;
+    overflow: hidden;
+    background: #e8e8e8;
+}
+
+.resume-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Mobile adjustments for resume modal */
+@media screen and (max-width: 768px) {
+    .resume-modal-content {
+        width: 96%;
+        height: 92vh;
+        border-radius: 12px;
+    }
+
+    .resume-modal-header {
+        padding: 14px 18px;
+    }
+
+    .resume-modal-header h3 {
+        font-size: 14px;
+    }
+
+    .resume-download-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .resume-close-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
     }
 }

@@ -53,7 +53,11 @@
         </aside>
 
         <!-- Mobile Menu Toggle -->
-        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle">
+            <span class="fries-line"></span>
+            <span class="fries-line"></span>
+            <span class="fries-line"></span>
+        </a>
 
         <!-- Main Content -->
         <div id="main-content">
@@ -71,8 +75,8 @@
                                         <div class="desc">
                                             <h1>Hi! <br>I'm Satya Prakash Mohanty</h1>
                                             <h2>Data Scientist.</h2>
-                                            <p><a href="#about" class="btn btn-primary btn-learn">Download CV <i
-                                                        class="fas fa-download"></i></a></p>
+                                            <p><a href="javascript:void(0)" class="btn btn-primary btn-learn" id="open-resume-btn">View Resume <i
+                                                        class="fas fa-file-pdf"></i></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -240,77 +244,50 @@
                         </div>
                     </div>
                     <div class="timeline">
-                        <!-- Item 1 -->
+                        <!-- Item 1: Data Science Mentor -->
                         <div class="timeline-entry">
                             <div class="timeline-entry-inner">
                                 <div class="timeline-icon bg-color-1">
                                     <i class="fas fa-briefcase"></i>
                                 </div>
                                 <div class="timeline-label">
-                                    <h2><a href="#">Data Scientist</a> <span>May 2024 – Present</span></h2>
-                                    <p><strong>ElevanceSkills (NullClass Previously)</strong></p>
+                                    <h2><a href="#">Data Science Mentor</a> <span>Jan 2026 – Present</span></h2>
+                                    <p><strong>ElevanceSkills · Bengaluru, India · Remote</strong></p>
                                     <ul>
-                                        <li><strong>Deep Learning:</strong> Design and implement neural networks using
-                                            TensorFlow and Keras, focusing on CNN, RNN, and Transformer architectures.
-                                        </li>
-                                        <li><strong>Advanced Analytics:</strong> Perform in-depth data analysis and EDA
-                                            using pandas and scikit-learn to uncover trends.</li>
-                                        <li><strong>Data Visualization:</strong> Develop interactive Power BI dashboards
-                                            to
-                                            facilitate data-driven decision-making.</li>
-                                        <li><strong>Technical Leadership:</strong> Manage the creation and evaluation of
-                                            machine learning tasks to ensure technical quality.</li>
+                                        <li>Designed and implemented CNNs, RNNs, and Transformer models using TensorFlow and Keras for image classification and NLP tasks.</li>
+                                        <li>Created and evaluated 20+ structured ML tasks for intern cohorts ensuring technical rigour and pedagogical clarity.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- Item 2 -->
-                        <div class="timeline-entry">
-                            <div class="timeline-entry-inner">
-                                <div class="timeline-icon bg-color-2">
-                                    <i class="fas fa-university"></i>
-                                </div>
-                                <div class="timeline-label">
-                                    <h2><a href="#">Data Science Intern</a> <span>Apr 2024 – May 2024</span></h2>
-                                    <p><strong>NullClass, Bengaluru, India</strong><br>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Research Experience Section -->
-            <section id="research" class="research-section" data-section="research">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="heading-meta">Research</span>
-                            <h2 class="heading">Research Experience</h2>
-                        </div>
-                    </div>
-                    <div class="timeline">
+                        <!-- Item 2: Research Intern -->
                         <div class="timeline-entry">
                             <div class="timeline-entry-inner">
                                 <div class="timeline-icon bg-color-3">
                                     <i class="fas fa-flask"></i>
                                 </div>
                                 <div class="timeline-label">
-                                    <h2><a href="#">Research Intern</a> <span>June 2025 – July 2025</span></h2>
-                                    <p><strong>HawkFranklin Research</strong></p>
+                                    <h2><a href="#">Research Intern — Tabular Foundation Models</a> <span>Jun 2025 – Dec 2025</span></h2>
+                                    <p><strong>HawkFranklin Research · Kolkata, India · Remote</strong></p>
                                     <ul>
-                                        <li><strong>Tabular Foundation Models:</strong> Conducted research and
-                                            benchmarking
-                                            on foundation models specifically for tabular data.</li>
-                                        <li><strong>Algorithm Implementation:</strong> Developed and implemented new
-                                            algorithms and conducted in-depth codebase analysis.</li>
-                                        <li><strong>Data Engineering:</strong> Curated and preprocessed diverse datasets
-                                            for
-                                            model training and evaluation.</li>
-                                        <li><strong>Performance Analysis:</strong> Created visualizations to interpret
-                                            model
-                                            behaviors and performance metrics.</li>
+                                        <li>Benchmarked TabPFN against gradient boosting baselines, demonstrating superior accuracy on small-scale datasets (&lt;1000 samples) without hyperparameter tuning.</li>
+                                        <li>Implemented novel algorithmic extensions to TabPFN; built end-to-end reproducible experimentation pipelines.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3: Data Scientist -->
+                        <div class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon bg-color-2">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="timeline-label">
+                                    <h2><a href="#">Data Scientist (Promoted from Intern)</a> <span>May 2024 – Jun 2025</span></h2>
+                                    <p><strong>NullClass · Bengaluru, India · Remote</strong></p>
+                                    <ul>
+                                        <li>Developed and maintained ML models for classification and prediction tasks using Scikit-learn and TensorFlow.</li>
+                                        <li>Built end-to-end data pipelines from raw data ingestion to model deployment and performance monitoring.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -570,6 +547,27 @@
                     </div>
                 </footer>
             </section>
+        </div>
+    </div>
+
+    <!-- Resume Preview Modal -->
+    <div id="resume-modal" class="resume-modal">
+        <div class="resume-modal-overlay"></div>
+        <div class="resume-modal-content">
+            <div class="resume-modal-header">
+                <h3><i class="fas fa-file-pdf"></i> Resume</h3>
+                <div class="resume-modal-actions">
+                    <a href="Satya Prakash Data Resume.pdf" download class="resume-download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <button id="close-resume-btn" class="resume-close-btn" aria-label="Close resume">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <iframe src="Satya Prakash Data Resume.pdf" class="resume-iframe" title="Satya Prakash Resume"></iframe>
+            </div>
         </div>
     </div>
 

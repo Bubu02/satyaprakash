@@ -114,4 +114,38 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('fade-in-left');
         observer.observe(el);
     });
+
+    // Resume Modal
+    const resumeModal = document.getElementById('resume-modal');
+    const openResumeBtn = document.getElementById('open-resume-btn');
+    const closeResumeBtn = document.getElementById('close-resume-btn');
+    const resumeOverlay = resumeModal.querySelector('.resume-modal-overlay');
+
+    function openResumeModal(e) {
+        if (e) e.preventDefault();
+        resumeModal.style.display = 'flex';
+        // Trigger reflow for transition
+        requestAnimationFrame(() => {
+            resumeModal.classList.add('active');
+        });
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal() {
+        resumeModal.classList.remove('active');
+        setTimeout(() => {
+            resumeModal.style.display = 'none';
+        }, 350);
+        document.body.style.overflow = '';
+    }
+
+    openResumeBtn.addEventListener('click', openResumeModal);
+    closeResumeBtn.addEventListener('click', closeResumeModal);
+    resumeOverlay.addEventListener('click', closeResumeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+            closeResumeModal();
+        }
+    });
 });
