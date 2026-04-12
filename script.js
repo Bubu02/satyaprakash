@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `);
 
     animatedElements.forEach(el => {
-        el.classList.add('fade-in-left');
+        el.classList.add('fade-in-up');
         observer.observe(el);
     });
 

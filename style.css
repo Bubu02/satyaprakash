@@ -348,6 +348,7 @@ section {
         width: 44px;
         height: 44px;
         transition: all 0.35s ease;
+        mix-blend-mode: difference;
     }
 
     .fries-line {
@@ -374,6 +375,7 @@ section {
     body.mobile-menu-active .js-colorlib-nav-toggle {
         background: #fff;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        mix-blend-mode: normal;
     }
 
     body.mobile-menu-active .fries-line {
@@ -448,6 +450,25 @@ section {
 
     .slider-text-inner h2 {
         font-size: 20px;
+    }
+
+    /* Adjust text size for Experience and Projects sections */
+    .timeline-label h2 {
+        font-size: 16px;
+    }
+    
+    .timeline-label span,
+    .timeline-label p,
+    .timeline-label ul li {
+        font-size: 13px;
+    }
+
+    .project-entry .desc h3 {
+        font-size: 15px;
+    }
+    
+    .project-entry .desc span {
+        font-size: 11px;
     }
 }
 
@@ -1013,15 +1034,15 @@ body {
 }
 
 /* Scroll Animation Styles */
-.fade-in-left {
+.fade-in-up {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.fade-in-left.visible {
+.fade-in-up.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 /* Stagger animation delays for timeline entries */
